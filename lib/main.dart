@@ -5,6 +5,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -78,8 +80,8 @@ class App extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 40
+                        vertical: 20,
+                        horizontal: 50
                       ),
                       child: Text('Transfer',
                         style : TextStyle(
