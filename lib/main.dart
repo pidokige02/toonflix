@@ -70,19 +70,91 @@ class App extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height:25,
+                height: 25,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Button(text: 'Transfer',
-                  bgColor: Colors.amber,
-                  textColor: Colors.black),
-                  Button(text: 'Request',
-                  bgColor: const Color(0xFF1F2123),
-                  textColor: Colors.white),
+                  Button(
+                      text: 'Transfer',
+                      bgColor: Colors.amber,
+                      textColor: Colors.black),
+                  Button(
+                      text: 'Request',
+                      bgColor: const Color(0xFF1F2123),
+                      textColor: Colors.white),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 100,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Wallets',
+                    style: TextStyle(
+                      color: Colors.white.withValues(),
+                      fontSize: 36,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    'View All',
+                    style: TextStyle(
+                      color: Colors.white.withValues(),
+                      fontSize: 18,
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 20),
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1F2123),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Euro',
+                          style: TextStyle(
+                            color: Colors.white.withValues(),
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Text('6 428',
+                                style: TextStyle(
+                                  color: Colors.white.withValues(),
+                                  fontSize: 20)
+                            ),
+                            SizedBox(
+                                width: 5,
+                            ),
+                            Text('EUR',
+                                style: TextStyle(
+                                  color: Colors.white.withValues(),
+                                  fontSize: 20)
+                            )
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                ),
+              ),
             ],
           ),
         ),
