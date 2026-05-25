@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/button.dart';
+import 'package:toonflix/widgets/currency_card.dart';
 
 void main() {
   runApp(App());
@@ -49,7 +50,7 @@ class App extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 120,
+                height: 40,
               ),
               Text(
                 'Total balance',
@@ -86,7 +87,7 @@ class App extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 100,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,63 +110,31 @@ class App extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1F2123),
-                  borderRadius: BorderRadius.circular(25),
+              CurrencyCard(
+                name: 'EURO',
+                code: 'EUR',
+                amount: '6 428',
+                icon: Icons.euro_rounded,
+                isInverted: false,
+              ),
+              Transform.translate(
+                offset: Offset(0, -20),
+                child: CurrencyCard(
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  amount: '9 785',
+                  icon: Icons.currency_bitcoin_rounded,
+                  isInverted: true,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween ,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Euro',
-                            style: TextStyle(
-                              color: Colors.white.withValues(),
-                              fontSize: 32,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Text('6 428',
-                                  style: TextStyle(
-                                    color: Colors.white.withValues(),
-                                    fontSize: 20)
-                              ),
-                              SizedBox(
-                                  width: 5,
-                              ),
-                              Text('EUR',
-                                  style: TextStyle(
-                                    color: Colors.white.withValues(),
-                                    fontSize: 20)
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                      Transform.scale(
-                        scale: 2.2,
-                        child: Transform.translate(
-                          offset: const Offset(-5, 12),
-                          child: Icon(
-                            Icons.euro_rounded,
-                            color: Colors.white.withValues(),
-                            size: 88,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+              ),
+              Transform.translate(
+                offset: Offset(0, -40),
+                child: CurrencyCard(
+                  name: 'Dollar',
+                  code: 'USD',
+                  amount: '428',
+                  icon: Icons.attach_money_outlined,
+                  isInverted: false,
                 ),
               ),
             ],
